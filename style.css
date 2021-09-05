@@ -68,3 +68,13 @@ body {
 .status.green {
     background-color: green;
 }
+
+.highlight {
+    background-color: lightpink;
+}
+
+
+/* Velocidade da animação */
+.postIt, .dropzone {
+    transition: .4s;
+}
