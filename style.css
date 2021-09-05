@@ -14,10 +14,10 @@ body {
 }
 
 .mainBoard{
-    display: flex;
-    /* justify-content: space-between; */
+    height: 75vh;
+    margin: 30px auto;
 
-    margin-top: 32px;
+    display: flex;
 }
 
 .board {
@@ -32,6 +32,7 @@ body {
 }
 
 .dropzone {
+    height: 100%;
     padding: 16px;
     background-color: gray;
     min-width: 280px;
@@ -41,7 +42,7 @@ body {
 .postIt {
     background-color: #141316cc;
     padding: 16px;
-    box-shadow: 0 2px -1px; /* repectivamente: eixo x, eixo y e blur*/
+    box-shadow: 0 2px -1px; /* respectivamente: eixo x, eixo y e blur*/
     width: 250px;
     margin: 25px 0;
     border-radius: 0 4px 4px 4px;
