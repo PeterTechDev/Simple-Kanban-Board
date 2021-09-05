@@ -49,6 +49,10 @@ body {
     font-size: 18px;
 }
 
+.postIt:hover{
+    cursor:-webkit-grab;
+}
+
 .status {
     width: 30px;
     height: 8px;
@@ -77,4 +81,13 @@ body {
 /* Velocidade da animação */
 .postIt, .dropzone {
     transition: .4s;
+}
+
+.is-dragging {
+    cursor: hand;
+    opacity: 0.3;
+}
+
+.over {
+    background-color: midnightblue;
 }

@@ -1,13 +1,6 @@
-// Help
-function log(message){
-    console.log('> ' + message);
-}
-
-
-//caputura os elementos
+//Captura os elementos
 const postIts = document.querySelectorAll('.postIt');
 const dropzones = document.querySelectorAll('.dropzone');
-
 
 //mover os posts
 postIts.forEach(post=>{
@@ -17,38 +10,50 @@ postIts.forEach(post=>{
 })
 
 function dragstart(){
-    log('O post começou a se mover')
+    dropzones.forEach(dropzone=> dropzone.classList.add('highlight'));
+    
+    //this = post
+    this.classList.add('is-dragging')
 }
 
 function drag(){
-    log('O post está se movendo')
+    console.log('is dragging')
 }
 
+
 function dragend(){
-    log('O post parou')
+    dropzones.forEach(dropzone=> dropzone.classList.remove('highlight'));
+
+    this.classList.remove('is-dragging')
 }
 
 
 // Zona que os cartões podem ser deixados
-dropzones.forEach(dropzone=>{
-    card.addEventListener('dragstart', dragstart)
-    card.addEventListener('drag', drag)
-    card.addEventListener('dragend', dragend)
+dropzones.forEach( dropzone => {
+    dropzone.addEventListener('dragenter', dragenter)
+    dropzone.addEventListener('dragover', dragover)
+    dropzone.addEventListener('dragleave', dragleave)
+    dropzone.addEventListener('drop', drop)
 })
 
-function dragstart() {
-    dropzones.forEach( dropzone => dropzone.classList.add('highlight'))
+function dragenter(){
 
-    // this = post
-    this.classList.add('is-dragging')
 }
 
-function drag() {
-    // log('CARD: Is dragging ')
+function dragover(){
+    // this = dropzone 
+    this.classList.add('over')
+
+    // get dragging post
+    const postDragged = document.querySelector('.is-dragging');
+
+    this.appendChild(postDragged)
 }
 
-function dragend() {
-    dropzones.forEach( dropzone => dropzone.classList.remove('highlight'))
+function dragleave(){
+    this.classList.remove('over');
+}
 
-    this.classList.remove('is-dragging')
+function drop(){
+    this.classList.remove('over')
 }
