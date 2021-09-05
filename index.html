@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <title>Simple kanban board</title>
+</head>
+<header>
+    <h3>Minha lista de tarefas</h3>
+    <p>Digite sua tarefa e clique em enviar para ser adicionada ao seu mural</p>
+</header>
+<hr>
+
+<div class="mainBoard">
+    <div class="board">
+        <h3>A fazer</h3>
+        <div class="dropzone">
+            <div class="postIt" draggable="true">
+                <div class="status"></div>
+                <div class="content">Organizar a mesa</div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <h3>Em progresso</h3>
+        <div class="dropzone">
+            <div class="postIt" draggable="true">
+                <div class="status"></div>
+                <div class="content">Fazer kanban board</div>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <h3>Terminado</h3>
+        <div class="dropzone">
+            <div class="postIt">
+                <div class="status"></div>
+                <div class="content">Arrumar a cama</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+
+</html>

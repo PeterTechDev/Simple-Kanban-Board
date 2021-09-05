@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    font-family: 'Nunito';
+}
+
+body {
+    background-color: #fafafa;
+    color: blueviolet;
+}
+
+.mainBoard{
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 32px;
+}
+
+.board {
+    background-color: burlywood;
+    border: 1px solid blueviolet;
+    border-radius: 0 4px 4px 4px;
+    margin: 0 16px;
+}
+
+.board h3 {
+    padding: 16px;
+    color: brown;
+}
+
+.dropzone {
+    padding: 16px;
+    background-color: gray;
+    min-width: 332px;
+    min-height: 200px;
+}
+
+.postIt {
+    background-color: #141316;
+}
