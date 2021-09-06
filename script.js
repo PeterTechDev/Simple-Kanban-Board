@@ -3,28 +3,25 @@ const newTaskInput = document.getElementById('newTask')
 const BtnNewTask = document.querySelector('.BtnNewTask')
 const toDoBoard = document.querySelector("body > div > div.board.toDo > div");
 
-// const newPostIt = document.createElement('div');
-// newPostIt.classList.add('postIt')
-// newPostIt.setAttribute('draggable', 'true')
-// const contentNewPostIt = document.createElement('p');
-// contentNewPostIt.innerText = newTaskInput.value;
-
 BtnNewTask.addEventListener('click', ()=>{
     const newPostIt = document.createElement('div');
     newPostIt.classList.add('postIt')
     newPostIt.setAttribute('draggable', 'true')
     toDoBoard.appendChild(newPostIt)
-    
+
     const contentNewPostIt = document.createElement('div');
     contentNewPostIt.classList.add('content')
     contentNewPostIt.innerText = newTaskInput.value;
     newPostIt.appendChild(contentNewPostIt);
+
+    postIts = document.querySelectorAll('.postIt');
+    dropzones = document.querySelectorAll('.dropzone');
 })
 
 
 //Captura os elementos
-const postIts = document.querySelectorAll('.postIt');
-const dropzones = document.querySelectorAll('.dropzone');
+let postIts = document.querySelectorAll('.postIt');
+let dropzones = document.querySelectorAll('.dropzone');
 
 //mover os posts
 postIts.forEach(post=>{
