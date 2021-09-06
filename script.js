@@ -13,13 +13,12 @@ BtnNewTask.addEventListener('click', ()=>{
     const newPostIt = document.createElement('div');
     newPostIt.classList.add('postIt')
     newPostIt.setAttribute('draggable', 'true')
-
+    toDoBoard.appendChild(newPostIt)
+    
     const contentNewPostIt = document.createElement('div');
     contentNewPostIt.classList.add('content')
     contentNewPostIt.innerText = newTaskInput.value;
     newPostIt.appendChild(contentNewPostIt);
-    toDoBoard.appendChild(newPostIt)
-
 })
 
 
