@@ -15,7 +15,6 @@ BtnNewTask.addEventListener('click', ()=>{
     newPostIt.appendChild(contentNewPostIt);
 
     postIts = document.querySelectorAll('.postIt');
-    dropzones = document.querySelectorAll('.dropzone');
 })
 
 
@@ -30,11 +29,12 @@ postIts.forEach(post=>{
     post.addEventListener('dragend', dragend )
 })
 
-function dragstart(){
+function dragstart(event){
     dropzones.forEach(dropzone=> dropzone.classList.add('highlight'));
-    
+    console.log(postIts)
     //this = post
     this.classList.add('is-dragging')
+    // event.target.classList.add('is-dragging')
 }
 
 function drag() {
