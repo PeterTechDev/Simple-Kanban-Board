@@ -80,3 +80,11 @@ function dragleave(){
 function drop(){
     this.classList.remove('over')
 }
+
+document.body.addEventListener('dblclick', ()=>{
+    
+})
+
+const deleteTask =(post)=>{
+
+}

@@ -26,6 +26,34 @@ header{
     background: var(--blue);
 }
 
+.addTask {
+    background-color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    height: 15vh;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addTask input{
+    padding: 10px;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.BtnNewTask{
+    height: 33px;
+    width: 80px;
+    border-radius: 5px;
+    background: var(--green);
+}
+
 .mainBoard{
     height: 75vh;
     margin: 30px 3%;
@@ -47,7 +75,7 @@ header{
 }
 
 .dropzone {
-    height: 91%;
+    height: 90%;
     padding-top: 1%;
     /* background-color: gray; */
 }
@@ -72,7 +100,7 @@ header{
 }
 
 /* Velocidade da animação */
-.postIt, .dropzone {
+.postIt, .dropzone, .BtnNewTask {
     transition: .4s;
 }
 
@@ -97,4 +125,10 @@ header{
 .done .over {
     background-color: var(--green);
     border:none
+}
+
+.BtnNewTask:hover{
+    letter-spacing: -.5px;
+    opacity: .75;
+    cursor:pointer;
 }
