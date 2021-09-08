@@ -15,6 +15,7 @@ BtnNewTask.addEventListener('click', ()=>{
     newPostIt.appendChild(contentNewPostIt);
 
     postIts = document.querySelectorAll('.postIt');
+    movePostIts()
 })
 
 
@@ -23,15 +24,22 @@ let postIts = document.querySelectorAll('.postIt');
 let dropzones = document.querySelectorAll('.dropzone');
 
 //mover os posts
-postIts.forEach(post=>{
-    post.addEventListener('dragstart', dragstart )
-    post.addEventListener('drag', drag)
-    post.addEventListener('dragend', dragend )
-})
+const movePostIts =()=>{
+    console.log('ligando movimentação')
+    postIts = document.querySelectorAll('.postIt');
+
+    postIts.forEach(post=>{
+        post.addEventListener('dragstart', dragstart )
+        post.addEventListener('drag', drag)
+        post.addEventListener('dragend', dragend )
+    })
+}
+
 
 function dragstart(event){
     dropzones.forEach(dropzone=> dropzone.classList.add('highlight'));
     console.log(postIts)
+
     //this = post
     this.classList.add('is-dragging')
     // event.target.classList.add('is-dragging')
@@ -76,3 +84,5 @@ function dragleave(){
 function drop(){
     this.classList.remove('over')
 }
+
+movePostIts()
