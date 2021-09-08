@@ -21,7 +21,7 @@ BtnNewTask.addEventListener('click', () => {
     movePostIts()
 })
 
-//Atualiza nodelist e add evento de arrastar aos postIts
+//Atualiza nodelist, add evento de arrastar aos postIts e evento para deletar tarefa
 const movePostIts = () => {
     console.log('ligando movimentação')
     postIts = document.querySelectorAll('.postIt');
@@ -36,7 +36,7 @@ const movePostIts = () => {
 }
 movePostIts()
 
-function dragstart(event) {
+function dragstart() {
     dropzones.forEach(dropzone => dropzone.classList.add('highlight'));
 
     //this = post
@@ -61,7 +61,6 @@ dropzones.forEach(dropzone => {
 })
 
 function dragenter() {
-    // log('DROPZONE: Enter in zone ')
 }
 
 function dragover() {
@@ -80,14 +79,6 @@ function dragleave() {
 function drop() {
     this.classList.remove('over')
 }
-
-// document.body.addEventListener('dblclick', ()=>{
-//     postIts.forEach(post=>{
-
-//     })
-// })
-
-
 
 function deleteTask() {
     dropzones.forEach(dropzone => dropzone.removeChild(this))
