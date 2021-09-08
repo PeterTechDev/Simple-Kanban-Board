@@ -5,7 +5,14 @@
 
 
 html {
-    font-family: 'Nunito';
+    /* font-family: 'Nunito'; */
+    font-family: 'Merriweather Sans', sans-serif;
+    --red: #ef476f;
+    --yellow: #ffd166;
+    --green: #06d6a0;
+    --blue: #118ab2;
+    --darkBlue: #073b4c;
+    --white: #f0efeb;
 }
 
 body {
@@ -48,6 +55,7 @@ body {
     border-radius: 0 4px 4px 4px;
     font-weight: 600;
     font-size: 18px;
+    word-wrap: break-word;
 }
 
 .postIt:hover{
