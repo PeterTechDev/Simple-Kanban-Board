@@ -6,7 +6,7 @@ let postIts = document.querySelectorAll('.postIt');
 let dropzones = document.querySelectorAll('.dropzone');
 
 //Criação do novo postIt
-BtnNewTask.addEventListener('click', ()=>{
+BtnNewTask.addEventListener('click', () => {
     const newPostIt = document.createElement('div');
     newPostIt.classList.add('postIt')
     newPostIt.setAttribute('draggable', 'true')
@@ -22,38 +22,38 @@ BtnNewTask.addEventListener('click', ()=>{
 })
 
 //Atualiza nodelist e add evento de arrastar aos postIts
-const movePostIts =()=>{
+const movePostIts = () => {
     console.log('ligando movimentação')
     postIts = document.querySelectorAll('.postIt');
 
-    postIts.forEach(post=>{
-        post.addEventListener('dragstart', dragstart )
+    postIts.forEach(post => {
+        post.addEventListener('dragstart', dragstart)
         post.addEventListener('drag', drag)
-        post.addEventListener('dragend', dragend )
+        post.addEventListener('dragend', dragend)
+        post.addEventListener('dblclick', deleteTask)
+
     })
 }
 movePostIts()
 
-function dragstart(event){
-    dropzones.forEach(dropzone=> dropzone.classList.add('highlight'));
-    console.log(postIts)
+function dragstart(event) {
+    dropzones.forEach(dropzone => dropzone.classList.add('highlight'));
 
     //this = post
     this.classList.add('is-dragging')
 }
 
 function drag() {
-    // log('CARD: Is dragging ')
 }
 
-function dragend(){
-    dropzones.forEach(dropzone=> dropzone.classList.remove('highlight'));
+function dragend() {
+    dropzones.forEach(dropzone => dropzone.classList.remove('highlight'));
 
     this.classList.remove('is-dragging')
 }
 
 // Define as dropzones 
-dropzones.forEach( dropzone => {
+dropzones.forEach(dropzone => {
     dropzone.addEventListener('dragenter', dragenter)
     dropzone.addEventListener('dragover', dragover)
     dropzone.addEventListener('dragleave', dragleave)
@@ -64,7 +64,7 @@ function dragenter() {
     // log('DROPZONE: Enter in zone ')
 }
 
-function dragover(){
+function dragover() {
     // this = dropzone 
     this.classList.add('over')
 
@@ -73,18 +73,22 @@ function dragover(){
     this.appendChild(postDragged)
 }
 
-function dragleave(){
+function dragleave() {
     this.classList.remove('over');
 }
 
-function drop(){
+function drop() {
     this.classList.remove('over')
 }
 
-document.body.addEventListener('dblclick', ()=>{
-    
-})
+// document.body.addEventListener('dblclick', ()=>{
+//     postIts.forEach(post=>{
 
-const deleteTask =(post)=>{
+//     })
+// })
 
+
+
+function deleteTask() {
+    dropzones.forEach(dropzone => dropzone.removeChild(this))
 }
