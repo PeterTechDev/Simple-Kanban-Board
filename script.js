@@ -17,11 +17,11 @@ BtnNewTask.addEventListener('click', ()=>{
     contentNewPostIt.innerText = newTaskInput.value;
     newPostIt.appendChild(contentNewPostIt);
 
-    postIts = document.querySelectorAll('.postIt');
+    newTaskInput.value = ''
     movePostIts()
 })
 
-//Atualizar nodelist e add evento de arrastar aos postIts
+//Atualiza nodelist e add evento de arrastar aos postIts
 const movePostIts =()=>{
     console.log('ligando movimentação')
     postIts = document.querySelectorAll('.postIt');
