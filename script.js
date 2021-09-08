@@ -1,8 +1,11 @@
-//adicionar nova tarefa
+//Captura os elementos
 const newTaskInput = document.getElementById('newTask')
 const BtnNewTask = document.querySelector('.BtnNewTask')
 const toDoBoard = document.querySelector("body > div > div.board.toDo > div");
+let postIts = document.querySelectorAll('.postIt');
+let dropzones = document.querySelectorAll('.dropzone');
 
+//Criação do novo postIt
 BtnNewTask.addEventListener('click', ()=>{
     const newPostIt = document.createElement('div');
     newPostIt.classList.add('postIt')
@@ -18,12 +21,7 @@ BtnNewTask.addEventListener('click', ()=>{
     movePostIts()
 })
 
-
-//Captura os elementos
-let postIts = document.querySelectorAll('.postIt');
-let dropzones = document.querySelectorAll('.dropzone');
-
-//mover os posts
+//Atualizar nodelist e add evento de arrastar aos postIts
 const movePostIts =()=>{
     console.log('ligando movimentação')
     postIts = document.querySelectorAll('.postIt');
@@ -34,7 +32,7 @@ const movePostIts =()=>{
         post.addEventListener('dragend', dragend )
     })
 }
-
+movePostIts()
 
 function dragstart(event){
     dropzones.forEach(dropzone=> dropzone.classList.add('highlight'));
@@ -42,7 +40,6 @@ function dragstart(event){
 
     //this = post
     this.classList.add('is-dragging')
-    // event.target.classList.add('is-dragging')
 }
 
 function drag() {
@@ -55,8 +52,7 @@ function dragend(){
     this.classList.remove('is-dragging')
 }
 
-
-// Zona que os cartões podem ser deixados
+// Define as dropzones 
 dropzones.forEach( dropzone => {
     dropzone.addEventListener('dragenter', dragenter)
     dropzone.addEventListener('dragover', dragover)
@@ -84,5 +80,3 @@ function dragleave(){
 function drop(){
     this.classList.remove('over')
 }
-
-movePostIts()
