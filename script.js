@@ -7,18 +7,22 @@ let dropzones = document.querySelectorAll('.dropzone');
 
 //Criação do novo postIt
 BtnNewTask.addEventListener('click', () => {
-    const newPostIt = document.createElement('div');
-    newPostIt.classList.add('postIt')
-    newPostIt.setAttribute('draggable', 'true')
-    toDoBoard.appendChild(newPostIt)
-
-    const contentNewPostIt = document.createElement('div');
-    contentNewPostIt.classList.add('content')
-    contentNewPostIt.innerText = newTaskInput.value;
-    newPostIt.appendChild(contentNewPostIt);
-
-    newTaskInput.value = ''
-    movePostIts()
+    if(newTaskInput.value == ''){
+        alert('Favor preencher o campo')
+    } else{
+        const newPostIt = document.createElement('div');
+        newPostIt.classList.add('postIt')
+        newPostIt.setAttribute('draggable', 'true')
+        toDoBoard.appendChild(newPostIt)
+        
+        const contentNewPostIt = document.createElement('div');
+        contentNewPostIt.classList.add('content')
+        contentNewPostIt.innerText = newTaskInput.value;
+        newPostIt.appendChild(contentNewPostIt);
+        
+        newTaskInput.value = ''
+        movePostIts()
+    }
 })
 
 //Atualiza nodelist, add evento de arrastar aos postIts e evento para deletar tarefa
