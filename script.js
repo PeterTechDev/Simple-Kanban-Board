@@ -85,5 +85,5 @@ function drop() {
 }
 
 function deleteTask() {
-    dropzones.forEach(dropzone => dropzone.removeChild(this))
+    this.parentNode.removeChild(this)
 }
