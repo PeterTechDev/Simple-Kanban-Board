@@ -90,7 +90,7 @@ header{
 .dropzone {
     height: 95%;
     padding-top: 1%;
-    background-color: gray;
+    /* background-color: gray; */
 
 }
 
