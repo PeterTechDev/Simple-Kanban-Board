@@ -19,7 +19,10 @@ BtnNewTask.addEventListener('click', () => {
         contentNewPostIt.classList.add('content')
         contentNewPostIt.innerText = newTaskInput.value;
         newPostIt.appendChild(contentNewPostIt);
-        
+
+        // atribui pai para o novo postIt
+        document.querySelector("body > div > div.board.toDo > div.dropzone").appendChild(newPostIt)
+
         newTaskInput.value = ''
         movePostIts()
     }
