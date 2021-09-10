@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 
@@ -69,22 +70,28 @@ header{
     justify-content: space-between;
 }
 
+.title {
+    height: 8%;
+}
+
 .board {
     width: 25%;
     overflow: auto;
     border: solid 10px #deb887;
     border-radius: 5px;
+    box-sizing: padding-box;
 }
 
 .board h3 {
-    padding: 18px;
+    padding: 2%;
     color: var(--darkBlue);
 }
 
 .dropzone {
-    height: 90%;
+    height: 95%;
     padding-top: 1%;
-    /* background-color: gray; */
+    background-color: gray;
+
 }
 
 .postIt {
